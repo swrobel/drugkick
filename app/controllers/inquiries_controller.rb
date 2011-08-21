@@ -126,6 +126,7 @@ class InquiriesController < ApplicationController
     logger.info @inquiry.inspect
 
     if all_done
+      session[:inquiry_step] = session[:inquiry_params] = nil
       redirect_to congrats_path
     else
       render 'new'

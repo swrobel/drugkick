@@ -1,10 +1,7 @@
-<div class="three columns">&nbsp;</div>
-<div class="ten columns aboutbox">
+<div class="two columns">&nbsp;</div>
+<div class="nine columns">
   <%= render :partial => "#{@inquiry.current_step}_copy" %>
-</div>
-<div class="clear"></div>
-<div class="three columns">&nbsp;</div>
-<div class="ten columns">
+  <div class="clear"></div>
   <%= simple_form_for(@inquiry) do |f| %>
     <%= f.error_notification %>
 
@@ -24,7 +21,6 @@
     <% end %>
     </div>
   <% end %>
-  <div class="clear"></div>
   <% unless @inquiry.first_step? %>
     <% if @inquiry.last_step? %>
       <p></p>
@@ -33,3 +29,20 @@
     <% end %>
   <% end %>
 </div>
+<div class="one column">&nbsp;</div>
+<div class="four columns">
+  <div class="social">
+    <p>Know someone who needs help?<br/>Spread the word about DrugKick!</p>
+  </div>
+  <div class="providers">
+    <p><strong>Treatment Providers</strong></p>
+    <ul>
+      <li>Grow your network</li>
+      <li>Connect with people in need</li>
+      <li>Pre-qualified matches</li>
+      <li>Manage your online profile</li>
+    </ul>
+    <a href="#" class="button">Contact us to join our network</a>
+  </div>
+</div>
+<div class="clear"></div>
