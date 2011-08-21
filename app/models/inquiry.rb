@@ -21,11 +21,7 @@ class Inquiry < ActiveRecord::Base
   end
 
   def next_step
-    if last_step?
-      self.current_step = nil
-    else
-      self.current_step = steps[steps.index(current_step)+1]
-    end  
+    self.current_step = steps[steps.index(current_step)+1] 
   end
 
   def previous_step  

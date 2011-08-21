@@ -100,6 +100,7 @@ class InquiriesController < ApplicationController
   # PUT /inquiries/1.xml
   def update
     logger.info params
+    all_done = false
     session[:inquiry_params].deep_merge!(params[:inquiry]) if params[:inquiry]
     @inquiry = Inquiry.find(params[:id])
     @inquiry.update_attributes(session[:inquiry_params])
@@ -111,13 +112,20 @@ class InquiriesController < ApplicationController
       elsif params[:finish]
         @inquiry.last_step 
       else
-        @inquiry.next_step  
-      end  
+        if @inquiry.last_step
+          all_done = true
+        else
+          @inquiry.next_step
+        end
+     end
       session[:inquiry_step] = @inquiry.current_step  
     end
     @inquiry.save!
+    logger.info @inquiry.current_step
+    logger.info @inquiry.last_step?
+    logger.info @inquiry.inspect
 
-    if @inquiry.current_step.blank?
+    if all_done
       redirect_to congrats_path
     else
       render 'new'
