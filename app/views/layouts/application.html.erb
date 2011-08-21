@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Drugkick</title>
+  <title>DrugKick: Find the right drug &amp; alcohol treatment program for you to kick the habit for good</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults, 'tabs' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
   <div class="container">
+    <div class="topspacer"></div>
+    <div class="eleven columns">
+      <img src="/images/web-logo.png" alt="DrugKick"/>
+      kicking the habit
+    </div>
+    <div class="five columns">Now available in Los Angeles!<br/>Coming soon to your city.</div>
+    <div class="clear">
+    <div class="three columns">&nbsp;</div>
 <%= yield %>
   </div>
+  <img src="/images/background.png" class="bgimg"/>
 </body>
 </html>

@@ -1,5 +1,24 @@
-<h1>New inquiry</h1>
+<%= simple_form_for(@inquiry) do |f| %>
+  <%= f.error_notification %>
 
-<%= render 'form' %>
+  <div class="inputs">
+    <%= render "#{@inquiry.current_step}_step", :f => f %>
+    <%= f.input :zip %>
+    <%= f.input :gender %>
+    <%= f.input :age %>
+    <%= f.input :repeat %>
+    <%= f.input :price_min %>
+    <%= f.input :price_max %>
+    <%= f.input :name %>
+    <%= f.input :phone %>
+    <%= f.input :email %>
+    <%= f.input :ip %>
+    <%= f.input :message %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', inquiries_path %>

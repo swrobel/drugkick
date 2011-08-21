@@ -24,7 +24,9 @@ class InquiriesController < ApplicationController
   # GET /inquiries/new
   # GET /inquiries/new.xml
   def new
-    @inquiry = Inquiry.new
+    session[:inquiry_params] ||= {}  
+    @inquiry = Inquiry.new(session[:inquiry_params])  
+    @inquiry.current_step = session[:inquiry_step]  
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,6 +42,26 @@ class InquiriesController < ApplicationController
   # POST /inquiries
   # POST /inquiries.xml
   def create
+    session[:inquiry_params].deep_merge!(params[:inquiry]) if params[:inquiry]  
+    @inquiry = Inquiry.new(session[:inquiry_params])  
+    @inquiry.current_step = session[:inquiry_step]  
+    if @inquiry.valid?  
+      if params[:back_button]  
+        @inquiry.previous_step  
+      elsif @inquiry.last_step?  
+        @inquiry.save if @inquiry.all_valid?  
+      else  
+        @inquiry.next_step  
+      end  
+      session[:inquiry_step] = @inquiry.current_step  
+    end  
+    if @inquiry.new_record?  
+      render 'new'  
+    else  
+      session[:inquiry_step] = session[:inquiry_params] = nil  
+      flash[:notice] = "Inquiry saved."  
+      redirect_to @inquiry  
+    end
     @inquiry = Inquiry.new(params[:inquiry])
 
     respond_to do |format|
