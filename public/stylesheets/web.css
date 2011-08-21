@@ -5,6 +5,8 @@
   box-shadow: 0 0 8px #000;
 }
 
+fieldset textarea {width:100%;}
+
 .topspacer {margin-top:20px;}
 
 .aboutbox {padding-top:50px;}

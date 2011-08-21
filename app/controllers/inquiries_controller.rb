@@ -115,10 +115,13 @@ class InquiriesController < ApplicationController
       end  
       session[:inquiry_step] = @inquiry.current_step  
     end
-    logger.info @inquiry
     @inquiry.save!
 
-    render 'new'
+    if @inquiry.current_step.blank?
+      redirect_to congrats_path
+    else
+      render 'new'
+    end
     # @inquiry = Inquiry.find(params[:id])
 
     # respond_to do |format|

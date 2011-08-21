@@ -15,12 +15,21 @@
     </div>
 
     <div class="actions">
+    <% if @inquiry.last_step? %>
+      <%= f.submit "&lt; Back".html_safe, :name => "back_button" %>
+      <%= f.submit 'Send'.html_safe %>
+    <% else %>
       <%= f.submit "&lt; Back".html_safe, :name => "back_button" %>
       <%= f.submit 'Next &gt;'.html_safe %>
+    <% end %>
     </div>
   <% end %>
   <div class="clear"></div>
   <% unless @inquiry.first_step? %>
-    <p>We found <%= @inquiry.num_results %> providers that match your needs. Answer the question above for more targeted results, or you can <%= link_to "get in touch now", inquiries_path(:finish => "1") %>.</p>
+    <% if @inquiry.last_step? %>
+      <p></p>
+    <% else %>
+      <p>We found <%= @inquiry.num_results %> providers that match your needs. Answer the question above for more targeted results, or you can <%= link_to "get in touch now", inquiries_path(:finish => "1") %>.</p>
+    <% end %>
   <% end %>
 </div>

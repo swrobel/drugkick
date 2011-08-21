@@ -20,8 +20,12 @@ class Inquiry < ActiveRecord::Base
     %w[why location demographics drugs insurance price treatment_type religion finish]
   end
 
-  def next_step  
-    self.current_step = steps[steps.index(current_step)+1]  
+  def next_step
+    if last_step?
+      self.current_step = nil
+    else
+      self.current_step = steps[steps.index(current_step)+1]
+    end  
   end
 
   def previous_step  
