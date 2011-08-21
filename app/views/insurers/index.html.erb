@@ -1,0 +1,23 @@
+<h1>Listing insurers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @insurers.each do |insurer| %>
+  <tr>
+    <td><%= insurer.name %></td>
+    <td><%= link_to 'Show', insurer %></td>
+    <td><%= link_to 'Edit', edit_insurer_path(insurer) %></td>
+    <td><%= link_to 'Destroy', insurer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Insurer', new_insurer_path %>

@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @rehab.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @rehab.address %>
+</p>
+
+<p>
+  <b>Address 2:</b>
+  <%= @rehab.address_2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @rehab.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @rehab.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @rehab.zip %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @rehab.phone %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @rehab.url %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @rehab.email %>
+</p>
+
+<p>
+  <b>Avg cost:</b>
+  <%= @rehab.avg_cost %>
+</p>
+
+<p>
+  <b>Min age:</b>
+  <%= @rehab.min_age %>
+</p>
+
+<p>
+  <b>Max age:</b>
+  <%= @rehab.max_age %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @rehab.gender %>
+</p>
+
+
+<%= link_to 'Edit', edit_rehab_path(@rehab) %> |
+<%= link_to 'Back', rehabs_path %>

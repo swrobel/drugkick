@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Zip:</b>
+  <%= @inquiry.zip %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @inquiry.gender %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%= @inquiry.age %>
+</p>
+
+<p>
+  <b>Repeat:</b>
+  <%= @inquiry.repeat %>
+</p>
+
+<p>
+  <b>Price min:</b>
+  <%= @inquiry.price_min %>
+</p>
+
+<p>
+  <b>Price max:</b>
+  <%= @inquiry.price_max %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @inquiry.name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @inquiry.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @inquiry.email %>
+</p>
+
+<p>
+  <b>Ip:</b>
+  <%= @inquiry.ip %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @inquiry.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_inquiry_path(@inquiry) %> |
+<%= link_to 'Back', inquiries_path %>

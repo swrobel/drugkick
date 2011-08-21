@@ -1,4 +1,16 @@
 Drugkick::Application.routes.draw do
+  resources :treatment_types
+
+  resources :insurers
+
+  resources :drugs
+
+  resources :religions
+
+  resources :inquiries
+
+  resources :rehabs
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

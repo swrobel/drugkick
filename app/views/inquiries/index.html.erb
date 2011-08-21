@@ -1,0 +1,43 @@
+<h1>Listing inquiries</h1>
+
+<table>
+  <tr>
+    <th>Zip</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Repeat</th>
+    <th>Price min</th>
+    <th>Price max</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Ip</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inquiries.each do |inquiry| %>
+  <tr>
+    <td><%= inquiry.zip %></td>
+    <td><%= inquiry.gender %></td>
+    <td><%= inquiry.age %></td>
+    <td><%= inquiry.repeat %></td>
+    <td><%= inquiry.price_min %></td>
+    <td><%= inquiry.price_max %></td>
+    <td><%= inquiry.name %></td>
+    <td><%= inquiry.phone %></td>
+    <td><%= inquiry.email %></td>
+    <td><%= inquiry.ip %></td>
+    <td><%= inquiry.message %></td>
+    <td><%= link_to 'Show', inquiry %></td>
+    <td><%= link_to 'Edit', edit_inquiry_path(inquiry) %></td>
+    <td><%= link_to 'Destroy', inquiry, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Inquiry', new_inquiry_path %>

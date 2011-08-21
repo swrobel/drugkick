@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  zip: MyString
+  gender: MyString
+  age: 1
+  repeat: false
+  price_min: 9.99
+  price_max: 9.99
+  name: MyText
+  phone: MyString
+  email: MyString
+  ip: MyString
+  message: MyText
+
+two:
+  zip: MyString
+  gender: MyString
+  age: 1
+  repeat: false
+  price_min: 9.99
+  price_max: 9.99
+  name: MyText
+  phone: MyString
+  email: MyString
+  ip: MyString
+  message: MyText

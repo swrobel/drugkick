@@ -1,0 +1,23 @@
+<%= simple_form_for(@rehab) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :address_2 %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :zip %>
+    <%= f.input :phone %>
+    <%= f.input :url %>
+    <%= f.input :email %>
+    <%= f.input :avg_cost %>
+    <%= f.input :min_age %>
+    <%= f.input :max_age %>
+    <%= f.input :gender %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

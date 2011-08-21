@@ -1,0 +1,47 @@
+<h1>Listing rehabs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Address 2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Phone</th>
+    <th>Url</th>
+    <th>Email</th>
+    <th>Avg cost</th>
+    <th>Min age</th>
+    <th>Max age</th>
+    <th>Gender</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rehabs.each do |rehab| %>
+  <tr>
+    <td><%= rehab.name %></td>
+    <td><%= rehab.address %></td>
+    <td><%= rehab.address_2 %></td>
+    <td><%= rehab.city %></td>
+    <td><%= rehab.state %></td>
+    <td><%= rehab.zip %></td>
+    <td><%= rehab.phone %></td>
+    <td><%= rehab.url %></td>
+    <td><%= rehab.email %></td>
+    <td><%= rehab.avg_cost %></td>
+    <td><%= rehab.min_age %></td>
+    <td><%= rehab.max_age %></td>
+    <td><%= rehab.gender %></td>
+    <td><%= link_to 'Show', rehab %></td>
+    <td><%= link_to 'Edit', edit_rehab_path(rehab) %></td>
+    <td><%= link_to 'Destroy', rehab, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rehab', new_rehab_path %>
