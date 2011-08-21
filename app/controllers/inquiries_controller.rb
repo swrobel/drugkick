@@ -112,7 +112,7 @@ class InquiriesController < ApplicationController
       elsif params[:finish]
         @inquiry.last_step 
       else
-        if @inquiry.last_step
+        if @inquiry.last_step?
           all_done = true
         else
           @inquiry.next_step
