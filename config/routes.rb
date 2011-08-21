@@ -1,4 +1,6 @@
 Drugkick::Application.routes.draw do
+  resources :leads
+
   resources :treatment_types
 
   resources :insurers

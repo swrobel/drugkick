@@ -1,0 +1,14 @@
+<%= simple_form_for(@lead) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+    <%= f.input :inquiry_id %>
+    <%= f.input :rehab_id %>
+    <%= f.input :price %>
+    <%= f.input :purchased %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

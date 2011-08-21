@@ -11,13 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110821030707) do
+ActiveRecord::Schema.define(:version => 20110821045241) do
 
   create_table "drugs", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "drugs_inquiries", :id => false, :force => true do |t|
+    t.integer "drug_id"
+    t.integer "inquiry_id"
+  end
+
+  add_index "drugs_inquiries", ["drug_id", "inquiry_id"], :name => "index_drugs_inquiries_on_drug_id_and_inquiry_id", :unique => true
+
+  create_table "drugs_rehabs", :id => false, :force => true do |t|
+    t.integer "drug_id"
+    t.integer "rehab_id"
+  end
+
+  add_index "drugs_rehabs", ["drug_id", "rehab_id"], :name => "index_drugs_rehabs_on_drug_id_and_rehab_id", :unique => true
 
   create_table "inquiries", :force => true do |t|
     t.string   "zip"
@@ -35,11 +49,50 @@ ActiveRecord::Schema.define(:version => 20110821030707) do
     t.datetime "updated_at"
   end
 
+  create_table "inquiries_insurers", :id => false, :force => true do |t|
+    t.integer "inquiry_id"
+    t.integer "insurer_id"
+  end
+
+  add_index "inquiries_insurers", ["inquiry_id", "insurer_id"], :name => "index_inquiries_insurers_on_inquiry_id_and_insurer_id", :unique => true
+
+  create_table "inquiries_religions", :id => false, :force => true do |t|
+    t.integer "inquiry_id"
+    t.integer "religion_id"
+  end
+
+  add_index "inquiries_religions", ["inquiry_id", "religion_id"], :name => "index_inquiries_religions_on_inquiry_id_and_religion_id", :unique => true
+
+  create_table "inquiries_treatment_types", :id => false, :force => true do |t|
+    t.integer "inquiry_id"
+    t.integer "treatment_type_id"
+  end
+
+  add_index "inquiries_treatment_types", ["inquiry_id", "treatment_type_id"], :name => "index_inquiries_treatment_types", :unique => true
+
   create_table "insurers", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "insurers_rehabs", :id => false, :force => true do |t|
+    t.integer "insurer_id"
+    t.integer "rehab_id"
+  end
+
+  add_index "insurers_rehabs", ["insurer_id", "rehab_id"], :name => "index_insurers_rehabs_on_insurer_id_and_rehab_id", :unique => true
+
+  create_table "leads", :force => true do |t|
+    t.integer  "inquiry_id"
+    t.integer  "rehab_id"
+    t.decimal  "price"
+    t.boolean  "purchased"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leads", ["inquiry_id", "rehab_id"], :name => "index_leads_on_inquiry_id_and_rehab_id", :unique => true
 
   create_table "rehabs", :force => true do |t|
     t.string   "name"
@@ -58,6 +111,20 @@ ActiveRecord::Schema.define(:version => 20110821030707) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "rehabs_religions", :id => false, :force => true do |t|
+    t.integer "rehab_id"
+    t.integer "religion_id"
+  end
+
+  add_index "rehabs_religions", ["rehab_id", "religion_id"], :name => "index_rehabs_religions_on_rehab_id_and_religion_id", :unique => true
+
+  create_table "rehabs_treatment_types", :id => false, :force => true do |t|
+    t.integer "rehab_id"
+    t.integer "treatment_type_id"
+  end
+
+  add_index "rehabs_treatment_types", ["rehab_id", "treatment_type_id"], :name => "index_rehabs_treatment_types_on_rehab_id_and_treatment_type_id", :unique => true
 
   create_table "religions", :force => true do |t|
     t.string   "name"

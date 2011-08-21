@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  inquiry_id: 1
+  rehab_id: 1
+  price: 9.99
+  purchased: false
+
+two:
+  inquiry_id: 1
+  rehab_id: 1
+  price: 9.99
+  purchased: false
