@@ -1,6 +1,6 @@
 Drugkick::Application.routes.draw do
   root to: "welcome#home"
-  resources :inquiries
+  resources :inquiries, :except => [:index, :show]
   match 'congrats' => 'welcome#congrats', :as => :congrats
 
   # resources :leads
