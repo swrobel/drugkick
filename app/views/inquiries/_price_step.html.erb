@@ -1,0 +1,6 @@
+<legend>Which monthly price range is the best fit for your budget?</legend>
+<% why_options = [] %>
+<% why_options << [5000, "Under $5,000"] %>
+<% why_options << [20000,"Between $5,000 and $20,000"] %>
+<% why_options << [100000, "Over $20,000"] %>
+<%= f.collection_radio :price_max, why_options, :first, :last %>

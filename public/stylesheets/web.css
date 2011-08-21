@@ -20,6 +20,10 @@
   z-index: -10000;
 }
 
+fieldset span {display:block;}
+
+fieldset span label {display:inline-block;font-weight:normal;}
+
 #notice {
   color: green;
 }

@@ -1,5 +1,7 @@
 Drugkick::Application.routes.draw do
-  root to: 'inquiries#new'
+  root to: "welcome#home"
+  resources :inquiries
+
   # resources :leads
 
   # resources :treatment_types

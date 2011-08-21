@@ -1,0 +1,8 @@
+<legend>What brings you here?</legend>
+<% why_options = [] %>
+<% why_options << ['Problem', "I know I have a problem and I'm looking for treatment"] %>
+<% why_options << ['Emergency',"I've hit rock-bottom and I need help urgently"] %>
+<% why_options << ['Curious', "I think I might have a problem and I'm doing some research into therapy"] %>
+<% why_options << ['Court',"I was court-ordered to find a treatment program"] %>
+<% why_options << ['Friend',"I'm looking for help for a friend or loved one"] %>
+<%= f.collection_radio :why, why_options, :first, :last %>

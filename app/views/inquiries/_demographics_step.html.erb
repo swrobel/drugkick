@@ -1,0 +1,5 @@
+<legend>What is the gender of the person needing treatment?</legend>
+<%= f.collection_radio :gender, [["M", "Male"],["F", "Female"]], :first, :last %>
+<%= f.input :age, :label => "Enter the age of the person needing treatment" %>
+<legend>Has the person gone through treatment before?</legend>
+<%= f.collection_radio :repeat, [[true, "Yes"],[false, "No"]], :first, :last %>

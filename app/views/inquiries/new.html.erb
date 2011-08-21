@@ -1,24 +1,26 @@
-<%= simple_form_for(@inquiry) do |f| %>
-  <%= f.error_notification %>
+<div class="three columns">&nbsp;</div>
+<div class="ten columns aboutbox">
+  <%= render :partial => "#{@inquiry.current_step}_copy" %>
+</div>
+<div class="clear"></div>
+<div class="three columns">&nbsp;</div>
+<div class="ten columns">
+  <%= simple_form_for(@inquiry) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="inputs">
-    <%= render "#{@inquiry.current_step}_step", :f => f %>
-    <%= f.input :zip %>
-    <%= f.input :gender %>
-    <%= f.input :age %>
-    <%= f.input :repeat %>
-    <%= f.input :price_min %>
-    <%= f.input :price_max %>
-    <%= f.input :name %>
-    <%= f.input :phone %>
-    <%= f.input :email %>
-    <%= f.input :ip %>
-    <%= f.input :message %>
-  </div>
+    <div class="inputs">
+      <fieldset>
+        <%= render "#{@inquiry.current_step}_step", :f => f %>
+      </fieldset>
+    </div>
 
-  <div class="actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', inquiries_path %>
+    <div class="actions">
+      <%= f.submit "&lt; Back".html_safe, :name => "back_button" %>
+      <%= f.submit 'Next &gt;'.html_safe %>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+  <% unless @inquiry.first_step? %>
+    <p>We found <%= @inquiry.num_results %> providers that match your needs. Answer the question above for more targeted results, or you can <%= link_to "get in touch now", inquiries_path(:finish => "1") %>.</p>
+  <% end %>
+</div>
