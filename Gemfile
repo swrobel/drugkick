@@ -8,3 +8,5 @@ gem 'geocoder'
 gem 'phone'
 gem 'simple_form'
 gem 'rack-rewrite'
+gem 'silent-postgres', :group => :development
+gem 'squeel'
