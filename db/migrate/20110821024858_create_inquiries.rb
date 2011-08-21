@@ -7,7 +7,7 @@ class CreateInquiries < ActiveRecord::Migration
       t.boolean :repeat
       t.decimal :price_min
       t.decimal :price_max
-      t.text :name
+      t.string :name
       t.string :phone
       t.string :email
       t.string :ip
