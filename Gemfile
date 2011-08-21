@@ -6,3 +6,4 @@ gem 'jquery-rails'
 gem 'thin', :group => :development
 gem 'geocoder'
 gem 'phone'
+gem 'simple_form'
