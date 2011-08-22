@@ -48,6 +48,6 @@ class Inquiry < ActiveRecord::Base
   end
 
   def num_results
-    (25..500).to_a.sample
+    500/steps.index(current_step)
   end
 end

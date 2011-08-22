@@ -24,7 +24,7 @@
       <% if @inquiry.last_step? %>
         <p></p>
       <% else %>
-        <p>We found <%= @inquiry.num_results %> providers that match your needs. Answer the question above for more targeted results, or you can contact them now by clicking below</p>
+        <p>We found <strong><%= @inquiry.num_results %></strong> providers that match your needs. Answer the question above for more targeted results, or you can contact them now by clicking below</p>
         <%= f.submit "Get your results now", :name => "finish" %>
       <% end %>
     <% end %>
