@@ -14,10 +14,10 @@
     <div class="actions">
     <% if @inquiry.last_step? %>
       <%= f.submit "&lt; Back".html_safe, :name => "back_button" %>
-      <%= f.submit 'Send' %>
+      <%= f.submit 'Send Inquiry' %>
     <% else %>
       <%= f.submit "&lt; Back".html_safe, :name => "back_button" %>
-      <%= f.submit 'Next &gt;'.html_safe %>
+      <%= f.submit 'Next Step &gt;'.html_safe %>
     <% end %>
     </div>
     <% unless @inquiry.first_step? %>
