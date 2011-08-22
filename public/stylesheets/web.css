@@ -22,6 +22,10 @@ fieldset textarea {width:100%;}
   z-index: -10000;
 }
 
+.logo {vertical-align:middle;}
+
+.topright{padding-top:5px;display:block;}
+
 fieldset span {display:block;}
 
 fieldset span label {display:inline-block;font-weight:normal;}

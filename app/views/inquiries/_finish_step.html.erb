@@ -1,4 +1,4 @@
 <%= f.input :name %>
-<%= f.input :phone %>
+<%= f.input :phone, input_html: {type: "text"} %>
 <%= f.input :email %>
 <%= f.input :message, label: "Please describe your situation in more detail",  :input_html => { :cols => 80, :rows => 10 } %>
