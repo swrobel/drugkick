@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.0.19'
 gem 'pg'
 gem 'jquery-rails'
 gem 'thin', :group => :development
